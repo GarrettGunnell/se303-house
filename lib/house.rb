@@ -20,12 +20,15 @@ class House
         @prefix = prefix
     end
 
-
     def line(n)
         "#{@prefix} #{subjects.slice(12 - n, 12).join(" ")}" + "the house that Jack built.\n"
     end
 
     def recite
         1.upto(12).collect { |i| line(i) }.join("\n")
+    end
+
+    def random_recite
+
     end
 end
