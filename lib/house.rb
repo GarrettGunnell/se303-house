@@ -28,9 +28,7 @@ class House
         1.upto(12).collect { |i| line(i) }.join("\n")
     end
 
-    def random_recite
-        1.upto(12).collect { |i| line(i) }.shuffle.join("\n")
+    def random_recite(seed=Random.new_seed)
+        1.upto(12).collect { |i| line(i) }.shuffle(random: Random.new(seed)).join("\n")
     end
 end
-
-puts House.new.random_recite
