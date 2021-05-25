@@ -17,15 +17,15 @@ class House
     end
 
     def initialize(prefix="This is")
-        @prefix = prefix + " "
+        @prefix = prefix
     end
 
 
     def line(n)
-        @prefix + subjects.slice(12 - n, subjects.length).join(" ") + "the house that Jack built.\n"
+        "#{@prefix} #{subjects.slice(12 - n, 12).join(" ")}" + "the house that Jack built.\n"
     end
 
     def recite
-        1.upto(12).collect {|i| line(i) }.join("\n")
+        1.upto(12).collect { |i| line(i) }.join("\n")
     end
 end
