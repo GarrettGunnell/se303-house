@@ -1,5 +1,5 @@
 class House
-    def line(n)
+    def line(n, begin_with="This is")
         case n
         when 1
             "This is the house that Jack built.\n"
@@ -28,7 +28,7 @@ class House
         end
     end
 
-    def recite
-        1.upto(12).collect {|i| line(i) }.join("\n")
+    def recite(begin_with="This is")
+        1.upto(12).collect {|i| line(i, begin_with) }.join("\n")
     end
 end
