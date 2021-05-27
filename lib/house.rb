@@ -18,15 +18,13 @@ class House
 end
 
 class Verses
-    attr_accessor :subjects, :verbs
-
     def initialize
         @subjects = ["the horse and the hound and the horn", "the farmer sowing his corn", "the rooster that crowed in the morn", "the priest all shaven and shorn", "the man all tattered and torn", "the maiden all forlorn", "the cow with the crumpled horn", "the dog", "the cat", "the rat", "the malt"]
         @verbs = ["belonged to ", "kept ", "woke ", "married ", "kissed ", "milked ", "tossed ", "worried ", "killed ", "ate ", "lay in "]
     end
 
     def generate
-        (0..10).collect { |i| "#{subjects[i]} that #{verbs[i]}" }
+        (0..10).collect { |i| "#{@subjects[i]} that #{@verbs[i]}" }
     end
 end
 
@@ -36,9 +34,8 @@ class RandomVerses < Verses
     end
 end
 
-
 class RandomPhraseVerses < Verses
     def generate
-        (0..10).collect { |i| "#{subjects.shuffle!.pop} that #{verbs.shuffle!.pop}" }
+        (0..10).collect { |i| "#{@subjects.shuffle!.pop} that #{@verbs.shuffle!.pop}" }
     end
 end
