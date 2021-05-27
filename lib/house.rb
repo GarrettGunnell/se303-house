@@ -3,17 +3,17 @@ class House
 
     def initialize(prefix="This is")
         @subjects = [
-            "the horse and the hound and the horn that ",
-            "the farmer sowing his corn that ",
-            "the rooster that crowed in the morn that ",
-            "the priest all shaven and shorn that ",
-            "the man all tattered and torn that ",
-            "the maiden all forlorn that ",
-            "the cow with the crumpled horn that ",
-            "the dog that ",
-            "the cat that ",
-            "the rat that ",
-            "the malt that ",
+            "the horse and the hound and the horn",
+            "the farmer sowing his corn",
+            "the rooster that crowed in the morn",
+            "the priest all shaven and shorn",
+            "the man all tattered and torn",
+            "the maiden all forlorn",
+            "the cow with the crumpled horn",
+            "the dog",
+            "the cat",
+            "the rat",
+            "the malt",
         ]
         @verbs = ["belonged to ", "kept ", "woke ", "married ", "kissed ", "milked ", "tossed ", "worried ", "killed ", "ate ", "lay in "]
         
@@ -22,7 +22,7 @@ class House
     end
 
     def verses
-        (0..10).collect { |i| subjects[i] + verbs[i] }
+        (0..10).collect { |i| "#{subjects[i]} that #{verbs[i]}" }
     end
 
     def phrases(n)
@@ -40,13 +40,13 @@ end
 
 class RandomHouse < House
     def verses
-        (0..10).collect { |i| subjects[i] + verbs[i] }.shuffle
+        super.shuffle
     end
 end
 
 
 class RandomPhraseHouse < House
     def verses
-        (0..10).collect { |i| subjects.shuffle!.pop + verbs.shuffle!.pop }
+        (0..10).collect { |i| "#{subjects.shuffle!.pop} that #{verbs.shuffle!.pop}" }
     end
 end
