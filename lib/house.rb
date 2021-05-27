@@ -3,11 +3,7 @@ class House
         @prefix = prefix
         @verses = verses.verses
     end
-
-    def verses
-        (0..10).collect { |i| "#{subjects[i]} that #{verbs[i]}" }
-    end
-
+    
     def phrases(n)
         @verses.slice(12 - n, 12).join("")
     end
