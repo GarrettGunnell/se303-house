@@ -33,6 +33,7 @@ class House
 
     def initialize(prefix="This is")
         @prefix = prefix
+        @verses = verses
     end
 
     def verses
@@ -40,7 +41,7 @@ class House
     end
 
     def phrases(n)
-        verses.slice(12 - n, 12).join("")
+        @verses.slice(12 - n, 12).join("")
     end
 
     def line(n)
@@ -64,3 +65,6 @@ class RandomPhraseHouse < House
         (0..10).collect { |i| subjects.sample + verbs.sample }.shuffle
     end
 end
+
+h = RandomHouse.new
+puts h.recite
