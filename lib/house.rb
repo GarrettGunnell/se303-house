@@ -34,7 +34,7 @@ class House
 end
 
 class RandomHouse < House
-    def line(n)
-        "#{@prefix} #{subjects.shuffle.slice(12 - n, 12).join("")}" + "the house that Jack built.\n"
+    def phrases(n)
+        subjects.shuffle.slice(12 - n, 12).join("")
     end
 end
