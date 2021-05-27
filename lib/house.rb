@@ -1,9 +1,9 @@
 class House
     def initialize(prefix: "This is", verses: Verses.new)
         @prefix = prefix
-        @verses = verses.verses
+        @verses = verses.generate
     end
-    
+
     def phrases(n)
         @verses.slice(12 - n, 12).join("")
     end
@@ -25,7 +25,7 @@ class Verses
         @verbs = ["belonged to ", "kept ", "woke ", "married ", "kissed ", "milked ", "tossed ", "worried ", "killed ", "ate ", "lay in "]
     end
 
-    def verses
+    def generate
         (0..10).collect { |i| "#{subjects[i]} that #{verbs[i]}" }
     end
 end
