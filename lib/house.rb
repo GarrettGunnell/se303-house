@@ -1,6 +1,8 @@
 class House
-    def subjects
-        [
+    attr_accessor :subjects, :verbs
+
+    def initialize(prefix="This is")
+        @subjects = [
             "the horse and the hound and the horn that ",
             "the farmer sowing his corn that ",
             "the rooster that crowed in the morn that ",
@@ -13,25 +15,8 @@ class House
             "the rat that ",
             "the malt that ",
         ]
-    end
-
-    def verbs
-        [
-            "belonged to ",
-            "kept ",
-            "woke ",
-            "married ",
-            "kissed ",
-            "milked ",
-            "tossed ",
-            "worried ",
-            "killed ",
-            "ate ",
-            "lay in ",
-        ]
-    end
-
-    def initialize(prefix="This is")
+        @verbs = ["belonged to ", "kept ", "woke ", "married ", "kissed ", "milked ", "tossed ", "worried ", "killed ", "ate ", "lay in "]
+        
         @prefix = prefix
         @verses = verses
     end
@@ -66,5 +51,5 @@ class RandomPhraseHouse < House
     end
 end
 
-h = RandomHouse.new
+h = RandomPhraseHouse.new
 puts h.recite
