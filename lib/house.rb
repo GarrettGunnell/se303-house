@@ -1,22 +1,5 @@
 class House
-    attr_accessor :subjects, :verbs
-
     def initialize(prefix: "This is", verses: Verses.new)
-        @subjects = [
-            "the horse and the hound and the horn",
-            "the farmer sowing his corn",
-            "the rooster that crowed in the morn",
-            "the priest all shaven and shorn",
-            "the man all tattered and torn",
-            "the maiden all forlorn",
-            "the cow with the crumpled horn",
-            "the dog",
-            "the cat",
-            "the rat",
-            "the malt",
-        ]
-        @verbs = ["belonged to ", "kept ", "woke ", "married ", "kissed ", "milked ", "tossed ", "worried ", "killed ", "ate ", "lay in "]
-        
         @prefix = prefix
         @verses = verses.verses
     end
