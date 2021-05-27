@@ -27,8 +27,4 @@ class House
     def recite
         1.upto(12).collect { |i| line(i) }.join("\n")
     end
-
-    def random_recite(seed=Random.new_seed)
-        1.upto(12).collect { |i| line(i) }.shuffle(random: Random.new(seed)).join("\n")
-    end
 end
