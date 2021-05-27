@@ -1,5 +1,5 @@
 class House
-    def subjects 
+    def verses 
         [
             "the horse and the hound and the horn that belonged to ",
             "the farmer sowing his corn that kept ",
@@ -21,7 +21,7 @@ class House
     end
 
     def phrases(n)
-        subjects.slice(12 - n, 12).join("")
+        verses.slice(12 - n, 12).join("")
     end
 
     def line(n)
@@ -35,6 +35,6 @@ end
 
 class RandomHouse < House
     def phrases(n)
-        subjects.shuffle.slice(12 - n, 12).join("")
+        verses.shuffle.slice(12 - n, 12).join("")
     end
 end
