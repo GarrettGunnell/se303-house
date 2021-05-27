@@ -53,8 +53,8 @@ class House
 end
 
 class RandomHouse < House
-    def phrases(n)
-        verses.slice(12 - n, 12).shuffle.join("")
+    def verses
+        (0..10).collect { |i| subjects[i] + verbs[i] }.shuffle
     end
 end
 
