@@ -38,6 +38,10 @@ class House
     end
 end
 
+class Verses
+
+end
+
 class RandomHouse < House
     def verses
         super.shuffle
