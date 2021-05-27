@@ -60,10 +60,7 @@ end
 
 
 class RandomPhraseHouse < House
-    def phrases(n)
-        s = subjects.shuffle.slice(0, n - 1)
-        v = verbs.shuffle.slice(0, n - 1)
-
-        0.upto(n - 2).collect { |i| s[i] + v[i] }.join("")
+    def verses
+        (0..10).collect { |i| subjects.sample + verbs.sample }.shuffle
     end
 end
