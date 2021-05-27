@@ -35,6 +35,6 @@ end
 
 class RandomHouse < House
     def phrases(n)
-        verses.shuffle.slice(12 - n, 12).join("")
+        verses.slice(12 - n, 12).shuffle.join("")
     end
 end
