@@ -47,9 +47,6 @@ end
 
 class RandomPhraseHouse < House
     def verses
-        (0..10).collect { |i| subjects.sample + verbs.sample }.shuffle
+        (0..10).collect { |i| subjects.shuffle!.pop + verbs.shuffle!.pop }
     end
 end
-
-h = RandomPhraseHouse.new
-puts h.recite
