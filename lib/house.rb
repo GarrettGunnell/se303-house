@@ -15,31 +15,6 @@ class House
         ]
     end
 
-    def initialize(prefix="This is")
-        @prefix = prefix
-    end
-
-    def phrases(n)
-        verses.slice(12 - n, 12).join("")
-    end
-
-    def line(n)
-        "#{@prefix} #{phrases(n)}" + "the house that Jack built.\n"
-    end
-
-    def recite
-        1.upto(12).collect { |i| line(i) }.join("\n")
-    end
-end
-
-class RandomHouse < House
-    def phrases(n)
-        verses.slice(12 - n, 12).shuffle.join("")
-    end
-end
-
-
-class RandomPhraseHouse < House
     def subjects
         [
             "the horse and the hound and the horn that ",
@@ -72,6 +47,31 @@ class RandomPhraseHouse < House
         ]
     end
 
+    def initialize(prefix="This is")
+        @prefix = prefix
+    end
+
+    def phrases(n)
+        verses.slice(12 - n, 12).join("")
+    end
+
+    def line(n)
+        "#{@prefix} #{phrases(n)}" + "the house that Jack built.\n"
+    end
+
+    def recite
+        1.upto(12).collect { |i| line(i) }.join("\n")
+    end
+end
+
+class RandomHouse < House
+    def phrases(n)
+        verses.slice(12 - n, 12).shuffle.join("")
+    end
+end
+
+
+class RandomPhraseHouse < House
     def phrases(n)
         s = subjects.shuffle.slice(0, n - 1)
         v = verbs.shuffle.slice(0, n - 1)
