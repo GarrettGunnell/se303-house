@@ -20,8 +20,12 @@ class House
         @prefix = prefix
     end
 
+    def phrases(n)
+        subjects.slice(12 - n, 12).join("")
+    end
+
     def line(n)
-        "#{@prefix} #{subjects.slice(12 - n, 12).join("")}" + "the house that Jack built.\n"
+        "#{@prefix} #{phrases(n)}" + "the house that Jack built.\n"
     end
 
     def recite
