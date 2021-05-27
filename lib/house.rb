@@ -12,7 +12,6 @@ class House
             "the cat that killed ",
             "the rat that ate ",
             "the malt that lay in ",
-            ""
         ]
     end
 
