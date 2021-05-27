@@ -37,10 +37,8 @@ class RandomVerses < Verses
 end
 
 
-class RandomPhraseHouse < House
-    def verses
+class RandomPhraseVerses < Verses
+    def generate
         (0..10).collect { |i| "#{subjects.shuffle!.pop} that #{verbs.shuffle!.pop}" }
     end
 end
-
-puts House.new(verses: RandomVerses.new).recite
