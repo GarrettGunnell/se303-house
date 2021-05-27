@@ -1,7 +1,7 @@
 class House
     attr_accessor :subjects, :verbs
 
-    def initialize(prefix="This is")
+    def initialize(prefix: "This is")
         @subjects = [
             "the horse and the hound and the horn",
             "the farmer sowing his corn",
