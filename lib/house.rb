@@ -37,8 +37,11 @@ class Verses
 end
 
 class RandomVerses < Verses
-    def generate
-        super.shuffle
+    def initialize
+        super
+        seed = rand(10000)
+        @verbs.shuffle!(random: Random.new(seed))
+        @subjects.shuffle!(random: Random.new(seed))
     end
 end
 
@@ -52,4 +55,4 @@ class RandomPhraseVerses < Verses
     end
 end
 
-puts House.new(verses: RandomPhraseVerses.new).line(3)
+puts House.new(verses: RandomVerses.new).line(3)
