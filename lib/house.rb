@@ -26,21 +26,20 @@ class Verses
 end
 
 class RandomVerses
-    def self.randomize(subjects, verbs)
-        seed = rand(10000)
+    def self.randomize(subjects, verbs, seed=rand(10000))
         verbs.shuffle!(random: Random.new(seed))
         subjects.shuffle!(random: Random.new(seed))
     end
 end
 
 class RandomVerbs
-    def self.randomize(subjects, verbs)
-        verbs.shuffle!
+    def self.randomize(subjects, verbs, seed=rand(10000))
+        verbs.shuffle! (random: Random.new(seed))
     end
 end
 
 class RandomSubjects
-    def self.randomize(subjects, verbs)
-        subjects.shuffle!
+    def self.randomize(subjects, verbs, seed=rand(10000))
+        subjects.shuffle!(random: Random.new(seed))
     end
 end
