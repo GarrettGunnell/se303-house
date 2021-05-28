@@ -14,7 +14,7 @@ class House
 end
 
 class Verses
-    def initialize
+    def initialize(randomizers: [])
         @subjects = ["the malt", "the rat", "the cat", "the dog", "the cow with the crumpled horn", "the maiden all forlorn", "the man all tattered and torn", "the priest all shaven and shorn", "the rooster that crowed in the morn", "the farmer sowing his corn", "the horse and the hound and the horn"]
         @verbs = ["lay in ", "ate ", "killed ", "worried ", "tossed ", "milked ", "kissed ", "married ", "woke ", "kept ", "belonged to "]
     end
@@ -41,4 +41,15 @@ class RandomPhraseVerses < Verses
     end
 end
 
-puts House.new(verses: RandomPhraseVerses.new).line(3)
+#puts House.new(verses: RandomPhraseVerses.new).line(3)
+
+arr1 = [1, 2, 3, 4]
+print arr1
+puts ''
+
+def func(arr)
+    arr.shuffle!
+end
+
+func(arr1)
+print arr1
