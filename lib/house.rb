@@ -43,7 +43,13 @@ class RandomVerses < Verses
 end
 
 class RandomPhraseVerses < Verses
-    def generate
-        (0..10).collect { |i| "#{@subjects.shuffle!.pop} that #{@verbs.shuffle!.pop}" }
+    def verb
+        @verbs.shuffle!.pop
+    end
+
+    def subject
+        @subjects.shuffle!.pop
     end
 end
+
+puts House.new(verses: RandomPhraseVerses.new).line(3)
