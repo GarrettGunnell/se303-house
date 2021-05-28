@@ -20,11 +20,15 @@ end
 class Verses
     def initialize
         @subjects = ["the horse and the hound and the horn", "the farmer sowing his corn", "the rooster that crowed in the morn", "the priest all shaven and shorn", "the man all tattered and torn", "the maiden all forlorn", "the cow with the crumpled horn", "the dog", "the cat", "the rat", "the malt"]
-        @verbs = ["belonged to ", "kept ", "woke ", "married ", "kissed ", "milked ", "tossed ", "worried ", "killed ", "ate ", "lay in "]
+        @verbs = ["lay in ", "ate ", "killed ", "worried ", "tossed ", "milked ", "kissed ", "married ", "woke ", "kept ", "belonged to "]
+    end
+
+    def verb
+        @verbs.pop
     end
 
     def generate
-        (0..10).collect { |i| "#{@subjects[i]} that #{@verbs[i]}" }
+        (0..10).collect { |i| "#{@subjects[i]} that #{verb}" }
     end
 end
 
