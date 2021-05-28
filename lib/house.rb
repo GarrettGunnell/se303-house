@@ -32,7 +32,7 @@ class Verses
     end
 
     def generate
-        (0..10).collect { |i| "#{subject} that #{verb}" }
+        (0..10).collect { |i| "#{@subjects.pop} that #{@verb}" }
     end
 end
 
@@ -46,13 +46,11 @@ class RandomVerses < Verses
 end
 
 class RandomPhraseVerses < Verses
-    def verb
-        @verbs.shuffle!.pop
-    end
-
-    def subject
-        @subjects.shuffle!.pop
+    def initialize
+        super
+        @verbs.shuffle!
+        @subjects.shuffle!
     end
 end
 
-puts House.new(verses: RandomVerses.new).line(3)
+puts House.new(verses: RandomPhraseVerses.new).line(3)
