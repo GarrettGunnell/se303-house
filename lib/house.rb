@@ -17,6 +17,7 @@ class Verses
     def initialize(randomizers: [])
         @subjects = ["the malt", "the rat", "the cat", "the dog", "the cow with the crumpled horn", "the maiden all forlorn", "the man all tattered and torn", "the priest all shaven and shorn", "the rooster that crowed in the morn", "the farmer sowing his corn", "the horse and the hound and the horn"]
         @verbs = ["lay in ", "ate ", "killed ", "worried ", "tossed ", "milked ", "kissed ", "married ", "woke ", "kept ", "belonged to "]
+        randomizers.each { |r| r.randomize(@subjects, @verbs) }
     end
 
     def generate
@@ -24,32 +25,22 @@ class Verses
     end
 end
 
-class RandomVerses < Verses
-    def initialize
-        super
+class RandomVerses
+    def self.randomize(subjects, verbs)
         seed = rand(10000)
-        @verbs.shuffle!(random: Random.new(seed))
-        @subjects.shuffle!(random: Random.new(seed))
+        verbs.shuffle!(random: Random.new(seed))
+        subjects.shuffle!(random: Random.new(seed))
     end
 end
 
-class RandomPhraseVerses < Verses
-    def initialize
-        super
-        @verbs.shuffle!
-        @subjects.shuffle!
+class RandomVerbs
+    def self.randomize(subjects, verbs)
+        verbs.shuffle!
     end
 end
 
-#puts House.new(verses: RandomPhraseVerses.new).line(3)
-
-arr1 = [1, 2, 3, 4]
-print arr1
-puts ''
-
-def func(arr)
-    arr.shuffle!
+class RandomSubjects
+    def self.randomize(subjects, verbs)
+        subjects.shuffle!
+    end
 end
-
-func(arr1)
-print arr1
