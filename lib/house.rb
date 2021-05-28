@@ -9,7 +9,7 @@ class House
     end
 
     def recite
-        1.upto(12).collect { |i| line(i) }.join("\n")
+        1.upto(12).collect { |n| line(n) }.join("\n")
     end
 end
 
