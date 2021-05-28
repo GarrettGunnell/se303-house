@@ -3,13 +3,9 @@ class House
         @prefix = prefix
         @verses = verses.generate
     end
-
-    def phrases(n)
-        @verses.slice(12 - n, 12).join("")
-    end
-
+    
     def line(n)
-        "#{@prefix} #{phrases(n)}" + "the house that Jack built.\n"
+        "#{@prefix} #{@verses.slice(12 - n, 12).join("")}" + "the house that Jack built.\n"
     end
 
     def recite
