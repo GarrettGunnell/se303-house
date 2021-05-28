@@ -23,14 +23,6 @@ class Verses
         @verbs = ["lay in ", "ate ", "killed ", "worried ", "tossed ", "milked ", "kissed ", "married ", "woke ", "kept ", "belonged to "]
     end
 
-    def verb
-        @verbs.pop
-    end
-
-    def subject
-        @subjects.pop
-    end
-
     def generate
         (0..10).collect { |i| "#{@subjects.pop} that #{@verb}" }
     end
