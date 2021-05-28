@@ -1,7 +1,7 @@
 class House
-    def initialize(prefix: "This is", verses: Verses.new)
+    def initialize(prefix: "This is", verses: Verses.new.generate)
         @prefix = prefix
-        @verses = verses.generate
+        @verses = verses
     end
 
     def line(n)
