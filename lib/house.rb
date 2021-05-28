@@ -34,7 +34,7 @@ end
 
 class RandomVerbs
     def self.randomize(subjects:, verbs:, seed: rand(10000))
-        verbs.shuffle! (random: Random.new(seed))
+        verbs.shuffle!(random: Random.new(seed))
     end
 end
 
