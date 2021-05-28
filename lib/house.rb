@@ -17,7 +17,7 @@ class Verses
     def initialize(randomizers: [])
         @subjects = ["the malt", "the rat", "the cat", "the dog", "the cow with the crumpled horn", "the maiden all forlorn", "the man all tattered and torn", "the priest all shaven and shorn", "the rooster that crowed in the morn", "the farmer sowing his corn", "the horse and the hound and the horn"]
         @verbs = ["lay in ", "ate ", "killed ", "worried ", "tossed ", "milked ", "kissed ", "married ", "woke ", "kept ", "belonged to "]
-        randomizers.each { |r| r.randomize(@subjects, @verbs) }
+        randomizers.each { |r| r.randomize(subjects: @subjects, verbs: @verbs) }
     end
 
     def generate
@@ -26,20 +26,20 @@ class Verses
 end
 
 class RandomVerses
-    def self.randomize(subjects, verbs, seed=rand(10000))
+    def self.randomize(subjects:, verbs:, seed: rand(10000))
         verbs.shuffle!(random: Random.new(seed))
         subjects.shuffle!(random: Random.new(seed))
     end
 end
 
 class RandomVerbs
-    def self.randomize(subjects, verbs, seed=rand(10000))
+    def self.randomize(subjects:, verbs:, seed: rand(10000))
         verbs.shuffle! (random: Random.new(seed))
     end
 end
 
 class RandomSubjects
-    def self.randomize(subjects, verbs, seed=rand(10000))
+    def self.randomize(subjects:, verbs:, seed: rand(10000))
         subjects.shuffle!(random: Random.new(seed))
     end
 end
