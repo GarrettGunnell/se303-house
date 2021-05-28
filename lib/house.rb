@@ -24,7 +24,7 @@ class Verses
     end
 
     def generate
-        (0..10).collect { |i| "#{@subjects.pop} that #{@verb}" }
+        (0..10).collect { |i| "#{@subjects.pop} that #{@verbs.pop}" }
     end
 end
 
