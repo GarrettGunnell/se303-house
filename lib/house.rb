@@ -3,7 +3,7 @@ class House
         @prefix = prefix
         @verses = verses.generate
     end
-    
+
     def line(n)
         "#{@prefix} #{@verses.slice(12 - n, 12).join("")}" + "the house that Jack built.\n"
     end
@@ -20,7 +20,7 @@ class Verses
     end
 
     def generate
-        (0..10).collect { |i| "#{@subjects.pop} that #{@verbs.pop}" }
+        (0..10).collect { "#{@subjects.pop} that #{@verbs.pop}" }
     end
 end
 
