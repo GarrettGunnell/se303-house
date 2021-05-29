@@ -14,27 +14,27 @@ class House
 end
 
 class Verses
-    def initialize(randomizers: [])
+    def initialize(behaviors: [])
         @subjects = ["the malt", "the rat", "the cat", "the dog", "the cow with the crumpled horn", "the maiden all forlorn", "the man all tattered and torn", "the priest all shaven and shorn", "the rooster that crowed in the morn", "the farmer sowing his corn", "the horse and the hound and the horn"]
         @verbs = ["lay in ", "ate ", "killed ", "worried ", "tossed ", "milked ", "kissed ", "married ", "woke ", "kept ", "belonged to "]
-        randomizers.each { |r| method(r).(@subjects, @verbs) }
+        behaviors.each { |x| method(x) }
+    end
+
+    def random_verses
+        seed = rand(1000000)
+        @verbs.shuffle!(random: Random.new(seed))
+        @subjects.shuffle!(random: Random.new(seed))
+    end
+
+    def random_subjects
+        @subjects.shuffle!
+    end
+
+    def random_verbs
+        @verbs.shuffle!
     end
 
     def generate
         (0..10).collect { "#{@subjects.pop} that #{@verbs.pop}" }
     end
-end
-
-def RandomVerses(subjects, verbs)
-    seed = rand(1000000)
-    verbs.shuffle!(random: Random.new(seed))
-    subjects.shuffle!(random: Random.new(seed))
-end
-
-def RandomVerbs(subjects, verbs)
-    verbs.shuffle!
-end
-
-def RandomSubjects(subjects, verbs)
-    subjects.shuffle!
 end
