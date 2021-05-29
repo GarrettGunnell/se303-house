@@ -15,7 +15,7 @@ end
 
 class Verses
     def initialize(behaviors: [])
-        @subjects = ["the malt", "the rat", "the cat", "the dog", "the cow with the crumpled horn", "the maiden all forlorn", "the man all tattered and torn", "the priest all shaven and shorn", "the rooster that crowed in the morn", "the farmer sowing his corn", "the horse and the hound and the horn"]
+        @subjects = ["malt", "rat", "cat", "dog", "cow with the crumpled horn", "maiden all forlorn", "man all tattered and torn", "priest all shaven and shorn", "rooster that crowed in the morn", "farmer sowing his corn", "horse and the hound and the horn"]
         @verbs = ["lay in ", "ate ", "killed ", "worried ", "tossed ", "milked ", "kissed ", "married ", "woke ", "kept ", "belonged to "]
         behaviors.each { |x| method(x) }
     end
@@ -35,6 +35,6 @@ class Verses
     end
 
     def generate
-        (0..10).collect { "#{@subjects.pop} that #{@verbs.pop}" }
+        (0..10).collect { "the #{@subjects.pop} that #{@verbs.pop}" }
     end
 end
